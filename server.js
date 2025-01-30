@@ -8,19 +8,26 @@ const server = http.createServer((req, res) => {
 
 	const url = req.url;
 
-	switch (url) {
-		case "/home":
-			res.end("Welcome!");
-			break;
-		case "/user":
-			res.end("You are a person!");
-			break;
-		case "/test":
-			res.end("The test was successful!");
-			break;
-		default:
-			res.end("Hello World!");
-	}
+    // Set the Content-Type header to indicate JSON if you intend to send JSON.
+    res.setHeader('Content-Type', 'text/plain'); // Or 'application/json' if sending JSON
+
+    let message = ""; // Initialize a variable to hold the message
+
+    switch (url) {
+        case "/home":
+            message = "Welcome!";
+            break;
+        case "/user":
+            message = "You are a person!";
+            break;
+        case "/test":
+            message = "The test was successful!";
+            break;
+        default:
+            message = "Hello World!";
+    }
+
+    res.end(message); 
 })
 
 const PORT = process.env.PORT || 3000;
