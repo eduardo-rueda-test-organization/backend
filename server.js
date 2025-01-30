@@ -10,6 +10,9 @@ const server = http.createServer((req, res) => {
 		case "/user":
 			res.end("You are a person!");
 			break;
+		case "/test":
+			res.end("The test was successful!");
+			break;
 		default:
 			res.end("Hello World!");
 
