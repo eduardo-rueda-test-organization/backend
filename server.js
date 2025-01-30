@@ -1,8 +1,13 @@
 const http = require('http');
 
 const server = http.createServer((req, res) => {
+
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Or specify your frontend's origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Specify allowed methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Specify allowed headers (if any)
+
 	const url = req.url;
-	console.log(url)
+
 	switch (url) {
 		case "/home":
 			res.end("Welcome!");
