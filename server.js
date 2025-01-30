@@ -15,7 +15,6 @@ const server = http.createServer((req, res) => {
 			break;
 		default:
 			res.end("Hello World!");
-
 	}
 })
 
