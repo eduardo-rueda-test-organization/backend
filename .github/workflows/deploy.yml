@@ -35,7 +35,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "eduardorued-backend-39"
-          entrypoint: "deno run server.js"
+          entrypoint: "server.js"
           root: ""
           
           
