@@ -29,16 +29,13 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "npm i"
-
-      - name: Build step
-        run: "pwd && ls -l"
+        run: "npm install"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "eduardorued-backend-39"
-          entrypoint: "server.js"
-          root: "/"
-          
+          project: "eduardorued-backend-36"
+          entrypoint: "jsr:@deno/npm run start"
+          root: "."
+          include: /
           
