@@ -36,6 +36,6 @@ jobs:
         with:
           project: "eduardorued-backend-39"
           entrypoint: "server.js"
-          root: ""
+          root: "/"
           
           
